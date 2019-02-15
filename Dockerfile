@@ -15,3 +15,4 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/andrewprock/pokerstove.git
 RUN mkdir pokerstove/build
 RUN cd pokerstove/build && cmake -DCMAKE_BUILD_TYPE=Release .. && make
+RUN mv /usr/src/app/pokerstove/build/bin/* /bin/ && rm -rf pokerstove
